@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
-public class HelloService {
+public class HelloLogin {
 
 
     public static void main(String... args){
@@ -13,7 +13,7 @@ public class HelloService {
         //API: secure(keystoreFilePath, keystorePassword, truststoreFilePath,truststorePassword);
         secure("keystores/ecikeystore.p12", "123456", null, null);
 
-        get("hello", (req,res) -> prueba("contraseña"));
+        get("hello", (req,res) -> "hello world!");
     }
 
     private static int getPort() {
