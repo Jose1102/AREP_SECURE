@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 import com.google.common.hash.Hashing;
 
+import spark.staticfiles.StaticFilesConfiguration;
+
+
 import static spark.Spark.*;
 
 
@@ -14,7 +17,8 @@ public class HelloLogin {
 
 
     public static void main(String... args){
-        //staticFileLocation("/public");
+
+
         port(getPort());
         Map<String,String> users=new HashMap<>();
 
@@ -28,46 +32,59 @@ public class HelloLogin {
         URLReader.start();
 
 
-        get("/", (req, res) -> {
-            res.redirect( "index.html");
-            return "";
-        });
+
 
         before("secure/*", (req, response) ->{
             req.session(true);
             if(req.session().isNew()){
-                req.session().attribute("secureLogged",false);
+                req.session().attribute("Logged",false);
             }
-            boolean auth=req.session().attribute("secureLogged");
+            boolean auth=req.session().attribute("Logged");
             if(!auth){
+                System.out.println("Entra");
                 halt(401, "<h1>No estás autorizado, inicia sesión !</h1>");
-            }});
+            }
+
+        });
+
+
 
 
         before("/index.html",((req, response) ->{
             req.session(true);
             if(req.session().isNew()){
-                req.session().attribute("secureLogged",false);
+                req.session().attribute("Logged",false);
             }
-            boolean auth=req.session().attribute("secureLogged");
+            boolean auth=req.session().attribute("Logged");
             if(auth){
                 response.redirect("secure/inicio.html");
             }}));
 
 
+        StaticFilesConfiguration staticHandler = new StaticFilesConfiguration();
+        staticHandler.configure("/public");
+        before((request, response) ->
+                staticHandler.consume(request.raw(), response.raw()));
+
+        get("/", (req, res) -> {
+            res.redirect( "index.html");
+            return "";
+        });
 
         post("/login", (req, res) ->{
             req.session(true);
             User user = gson.fromJson(req.body(), User.class);
             if(Hashing.sha256().hashString(user.getPassword(), StandardCharsets.UTF_8).toString().equals(users.get(user.getMail()))){
                 req.session().attribute("User",user.getMail());
-                req.session().attribute("Loged",true);
+                req.session().attribute("Logged",true);
             }
             else{
                 return "Correo o contraseña incorrecta";
             }
             return "";
         });
+
+
 
     }
 
