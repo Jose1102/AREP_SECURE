@@ -17,8 +17,15 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
+/**
+ * @author Jose Maria Castro Ortega
+ * Clase URLReader está encargada de realizar conexión con nuestro archivo keystores
+ */
 public class URLReader {
 
+    /**
+     * Inicia la conexión con nuestro File keystores
+     */
     public static void  start() {
         File trustStoreFile = new File("keystores/myTrustStore");
         char[] trustStorePassword = "123456".toCharArray();

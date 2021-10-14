@@ -12,10 +12,17 @@ import spark.staticfiles.StaticFilesConfiguration;
 
 import static spark.Spark.*;
 
-
+/**
+ * @author Jose Maria Castro Ortega
+ * Clase principal de logueo
+ */
 public class HelloLogin {
 
 
+    /**
+     * Metodo main que hace el llamado de get y realiza before antes de ir a secure
+     * @param args es una lista de String
+     */
     public static void main(String... args){
 
 
@@ -90,6 +97,10 @@ public class HelloLogin {
 
     }
 
+    /**
+     * Metodo estático que retorna un puerto
+     * @return 4567 que es un número entero que es el puerto por donde se iniciara el localhost
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"co.edu.escuelaing.securityprimerlive","l":"HelloLogin"},{"p":"co.edu.escuelaing.securityprimerlive","l":"URLReader"},{"p":"co.edu.escuelaing.securityprimerlive","l":"User"}];updateSearchResults();
