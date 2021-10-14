@@ -31,7 +31,7 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [Git](https://git-scm.com/) - Software de control de versiones
 * [Java](https://www.oracle.com/java/) - Lenguaje de programación
-* [Java](http://sparkjava.com/) - Micro framework para crear aplicaciones web en Java 8
+* [Soark](http://sparkjava.com/) - Micro framework para crear aplicaciones web en Java 8
 
 ## Enunciado
 
@@ -44,7 +44,9 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 
 
 ## Video
-[Video]()
+
+[Video](https://github.com/Jose1102/AREP_SECURE/blob/main/Video.mp4)
+
 ## Comenzando 🚀
 1. Clonar el repositorio
 ```
@@ -82,17 +84,22 @@ mvn exec:java -D "exec.mainClass"="edu.escuelaing.arep.service.app.App"
 
 ## Arquitectura
 
+![arquitectura](https://github.com/Jose1102/AREP_SECURE/blob/main/images/arquitectura.PNG)
+
+
 ## Productividad
 La productividad de este proyecto fue:
 * 251 loc / 29 hours
 
 ## JavaDoc 📖
 
-Para consultar la carpeta de [JAVADOC](https://github.com/Jose1102/PicasYFamasGame/tree/master/javadoc) .
+Para consultar la carpeta de [JAVADOC](https://github.com/Jose1102/AREP_SECURE/tree/main/Login/doc) del directorio Login.
+
+Para consultar la carpeta de [JAVADOC](https://github.com/Jose1102/AREP_SECURE/tree/main/Service/doc) del directorio Service.
 
 
 ## Licencia 📌
 
-Este proyecto está bajo la Licencia Pública General GNU - consulte el archivo de [LICENCIA](https://github.com/Jose1102/PicasYFamasGame/blob/master/LICENSE.txt) para obtener más detalles.
+Este proyecto está bajo la Licencia Pública General GNU - consulte el archivo de [LICENCIA](https://github.com/Jose1102/AREP_SECURE/blob/main/LICENSE.txt) para obtener más detalles.
 
 
