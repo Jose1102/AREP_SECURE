@@ -19,7 +19,7 @@ public class HelloLogin {
     public static void main(String... args){
 
 
-        port(getPort());
+            port(getPort());
         Map<String,String> users=new HashMap<>();
 
         users.put("jose.castro@gmail.com",Hashing.sha256().hashString("123456789", StandardCharsets.UTF_8).toString());
@@ -42,7 +42,7 @@ public class HelloLogin {
             boolean auth=req.session().attribute("Logged");
             if(!auth){
                 System.out.println("Entra");
-                halt(401, "<h1>No estás autorizado, inicia sesión !</h1>");
+                halt(401, "<h1>No estas autorizado, inicia sesion !</h1>");
             }
 
         });
@@ -66,10 +66,7 @@ public class HelloLogin {
         before((request, response) ->
                 staticHandler.consume(request.raw(), response.raw()));
 
-        get("/", (req, res) -> {
-            res.redirect( "index.html");
-            return "";
-        });
+
 
         post("/login", (req, res) ->{
             req.session(true);
@@ -81,6 +78,11 @@ public class HelloLogin {
             else{
                 return "Correo o contraseña incorrecta";
             }
+            return "";
+        });
+
+        get("/", (req, res) -> {
+            res.redirect( "index.html");
             return "";
         });
 
