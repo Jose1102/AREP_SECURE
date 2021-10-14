@@ -31,7 +31,7 @@ Explique como escalaría su arquitectura de seguridad para incorporar nuevos ser
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [Git](https://git-scm.com/) - Software de control de versiones
 * [Java](https://www.oracle.com/java/) - Lenguaje de programación
-* [Soark](http://sparkjava.com/) - Micro framework para crear aplicaciones web en Java 8
+* [Spark](http://sparkjava.com/) - Micro framework para crear aplicaciones web en Java 8
 
 ## Enunciado
 
